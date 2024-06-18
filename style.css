@@ -1,0 +1,53 @@
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(65, 65, 65);
+        color: white;
+        margin: 0%;
+        padding: 0%;
+    }
+    .nav-link{
+        color: white;
+    }
+    .nav-link:hover{
+        color:firebrick
+    }
+    .nav-pills{
+        --bs-nav-pills-link-active-bg: firebrick;
+    }
+    .sidebar .nav-link{
+        color: firebrick !important;
+        background-color: rgb(65, 65, 65) !important;
+    }
+    .sidebar{
+        position: fixed;
+    }
+    main{
+        margin: 0%;
+    }
+    .text-body-secondary{
+        --bs-text-opacity: 1;
+        color: rgb(255 255 255 / 75%) !important;
+    }
+    .titulo{
+        background-color: firebrick;
+        width: 200px;
+        height: 30px;
+        border: 0px 10px 0px 10px;
+        border-color: rgb(rgb(55, 3, 3), green, blue) ;
+    }
+    .text{
+        padding: 30px;
+    }
+    #hcol2{
+        width: 350px;
+        height: 30px;
+    }
+    #hcol3{
+        margin-top: 15px;
+        width: 350px;
+        height: 30px;
+    }
+    .esfera{
+        border-radius: 50%;
+    }
