@@ -1,186 +1,377 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personagens</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personagens</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(65, 65, 65);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .nav-link {
+        color: white;
+      }
+      .nav-link:hover {
+        color: firebrick;
+      }
+      .nav-pills {
+        --bs-nav-pills-link-active-bg: firebrick;
+      }
+      main {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        padding: 20px;
+      }
+      .personagem {
+        flex: 1;
+        padding-right: 20px;
+        margin-bottom: 30px;
+      }
+      .personagem img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .novidades {
+        width: 300px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        border: 1px solid #555;
+        border-radius: 5px;
+      }
+      .novidades h3 {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+        color: #fff;
+      }
+      .novidade {
+        margin-bottom: 20px;
+      }
+      .novidade h4 {
+        color: firebrick;
+      }
+      .novidade p {
+        color: #ccc;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto;
+      }
+      .esfera{
+        border-radius: 50%;
+        border: 5px solid firebrick;
+        margin-top: 70px;
+        margin-bottom: 450px;
+        margin-left: 70px;
+        }
+      #ptm{
+        margin-bottom: 100px;
+      }
+      .titulo-thor{
+        background-color: firebrick;
+        border: 0px 10px 0px 10px;
+        width: 450px;
+        height: 30px;
+        margin-bottom: 25px;
+      }
+      .titulo{
+        background-color: firebrick;
+        border: 0px 10px 0px 10px;
+        width: 200px;
+        height: 30px;
+        margin-bottom: 25px;
+      }
+      .subtitulo{
+        background-color: rgb(240, 99, 99);
+        border: 0px 10px 0px 10px;
+        width: 200px;
+        height: 25px;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+        
+    </style>
+  </head>
+  <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        <h1><img src="tatakaititlet.png" width="128" height="51" alt="Tatakai RPG"></h1>
-                    </a>
-              
-                    <ul class="nav nav-pills">
-                      <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
-                      <li class="nav-item"><a href="personagens.html" class="nav-link active" aria-current="page">Personagens</a></li>
-                      <li class="nav-item"><a href="mundo.html" class="nav-link">Mundo</a></li>
-                      <li class="nav-item"><a href="novidades.html" class="nav-link">Novidades</a></li>
-                    </ul>
-                </header>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;" id="sidebar">
-                    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center sidebar">
-                      <li class="nav-item">
-                        <a href="#sobre" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Eo_circle_red_number-1.svg/768px-Eo_circle_red_number-1.svg.png" width="30" height="30" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#resumo" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Eo_circle_red_number-2.svg/768px-Eo_circle_red_number-2.svg.png" width="30" height="30" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#cenário" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Eo_circle_red_number-3.svg/768px-Eo_circle_red_number-3.svg.png" width="30" height="30" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#subsistemas" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Eo_circle_red_number-4.svg/768px-Eo_circle_red_number-4.svg.png" width="30" height="30" alt="">
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-            </div>
-            <div class="col-6">
-                <section id="thorkell">
-                    <header>
-                        <h3>Thorkell Thunderstrength</h3>
-                    </header>
-                    <article>
-                        <header>
-                            <h4>História</h4>
-                        </header>
-                        <div>
-                            <p>Thorkell, com sua imponente estatura e aspecto de viking, é uma figura venerada na cidade portuária onde reside. Sua trajetória <br>
-                                é marcada por um passado de conflitos, tendo sido forjado nas batalhas que assolaram a região. Como mestre de Muay Thai, <br>
-                                ele não apenas treina Joe, um jovem talentoso em busca de disciplina, o qual protagoniza a primeira história dentro do universo de tatakai,<br>
-                                mas também seu fiel amigo Zezim. Sua influência se estende além do ringue, sendo uma fonte de orientação e apoio para todos na comunidade,<br>
-                                especialmente os jovens em busca de um caminho. Embora assombrado por lembranças sombrias, Thorkell encontra redenção no ensinamento do <br>
-                                verdadeiro propósito da luta: uma jornada de autodescoberta e superação. Essas lições, enraizadas em sua própria experiência, são transmitidas<br>
-                                com sabedoria e exemplo, consolidando sua posição não apenas como um mestre das artes marciais, mas como um guia espiritual para aqueles que o cercam. <br>
-                                Contudo essa sabedoria é passada de forma bruta e inpaciente, visto sua personalidade</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Personalidade</h4>
-                        </header>
-                        <div>
-                            <p>A personalidade de Thorkell é uma mistura complexa de determinação inabalável, sabedoria profunda e uma generosidade que transcende suas próprias cicatrizes<br>
-                                emocionais. Ele irradia uma presença imponente, mas ao mesmo tempo é caloroso e acolhedor para aqueles que o procuram em busca de orientação. Sua natureza impulsiva, <br>
-                                moldada pelas experiências de guerra, é equilibrada por uma disciplina ferrenha que ele busca instilar em seus alunos. As vezes suas ações podem ser consideradas <br>
-                                brutas por quem vê, contudo possui um cunho de afeto para seus ensinamentos</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Aparência</h4>
-                        </header>
-                        <div>
-                            <img src="Thorkell.png" width="700" height="700" alt="A aparêncoa de Thorkell é descrita como: uma figura imponente que parece ter saído diretamente das sagas vikings, com seus cabelos loiros queimados pelo sol, caindo em ondas grossas até os ombros. Sua barba é grande e bem espessa, enquanto seus olhos azuis brilham com uma intensidade que reflete sua determinação inabalável">
-                        </div>
-                    </article>
-                </section>
-                <section id="one">
-                    <header>
-                        <h3>One</h3>
-                    </header>
-                    <article>
-                        <header>
-                            <h4>História</h4>
-                        </header>
-                        <div>
-                            <p>One é uma adição crucial à jornada épica dos protagonistas, trazendo consigo não apenas a notícia trágica da morte do amigo de infância de Joe, mas também uma <br>
-                                promessa de aventura e descoberta. Sua origem distante e encontro revelador com o misticismo antigo em uma tumba ancestral o dotaram não apenas de habilidades <br>
-                                físicas impressionantes, mas também de um profundo entendimento do mundo espiritual. Ao se juntar à busca para enfrentar o grande mal no Oriente Médio, <br>
-                                One emerge não apenas como um guerreiro habilidoso, mas também como um guardião dos segredos antigos que podem ser a chave para a vitória. <br>
-                                Sua presença é uma fonte de orientação espiritual e força em tempos de adversidade, enquanto ele e seus companheiros enfrentam desafios e descobertas que <br>
-                                os levam além dos limites do que é conhecido.</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Personalidade</h4>
-                        </header>
-                        <div>
-                            <p>Apesar de sua apatia em relação aos sentimentos alheios, a personalidade de One é longe de ser sombria; ele simplesmente carece da capacidade de se conectar emocionalmente com os outros.<br>
-                                No entanto, seu senso de humor peculiar adiciona uma camada de leveza às interações, especialmente quando contrastado com o temperamento impulsivo de Joe. <br>
-                                Essas dinâmicas entre os dois protagonistas muitas vezes resultam em cenas hilárias, onde a seriedade de One é contrabalançada pela espontaneidade de Joe, criando momentos <br>
-                                memoráveis de camaradagem e diversão em meio às adversidades da jornada.</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Aparência</h4>
-                        </header>
-                        <div>
-                            <img src="one.png" width="700" height="700" alt="One é uma figura intrigante, com uma combinação única de características que refletem uma fusão de diferentes influências culturais. Apesar de sua cabelo loiro, sua barba densa, bigode e olhos expressam claramente traços orientais.">
-                        </div>
-                    </article>
-                </section>
-                <section id="joe">
-                    <header>
-                        <h3>Joe Joestar</h3>
-                    </header>
-                    <article>
-                        <header>
-                            <h4>História</h4>
-                        </header>
-                        <div>
-                            <p>Joe é o protagonista principal, cuja vida é entrelaçada com mistério desde a infância. Ele descobre ter um anjo guardião desde pequeno, embora pensasse que fosse apenas um amigo imaginário. <br>
-                                Esse anjo o protege em batalhas, mesmo quando ele não está consciente disso. Quando conhece One e Thorkell, sua jornada de descoberta e enfrentamento do mal no Oriente Médio é desencadeada. <br>
-                                Ao lado deles, ele confronta não só inimigos externos, mas também seus próprios demônios internos, com seu anjo guardião revelando-se uma peça-chave em sua jornada de autodescoberta.</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Personalidade</h4>
-                        </header>
-                        <div>
-                            <p>Joe é o protagonista corajoso e impulsivo, cuja vida é entrelaçada com mistérios desde a infância, quando descobre ter um anjo guardião. Sua personalidade é marcada por uma determinação<br>
-                                inabalável e uma empatia profunda, embora às vezes seja impulsivo. Ao lado de seus aliados, como One e Thorkell, ele enfrenta desafios e busca respostas sobre seu passado e o mundo místico<br>
-                                que o rodeia, numa jornada de autodescoberta e proteção daqueles que ama.</p>
-                        </div>
-                    </article>
-                    <article>
-                        <header>
-                            <h4>Aparência</h4>
-                        </header>
-                        <div>
-                            <img src="joe.png" width="700" height="700" alt="Sua pele branca e traços franzinos destacam-se em contraste com a imponência de seus companheiros de jornada. Seus olhos avermelhados, como brasas ardentes.">
-                        </div>
-                    </article>
-                </section>
-            </div>
-            <div class="col-5">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <h1>
+            <img
+              src="tatakaititlet.png"
+              width="128"
+              height="51"
+              alt="Tatakai RPG"
+            />
+          </h1>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Início</a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="personagens.html"
+              class="nav-link active"
+              aria-current="page"
+              >Personagens</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="mundo.html" class="nav-link">Mundo</a>
+          </li>
+          <li class="nav-item">
+            <a href="novidades.html" class="nav-link">Novidades</a>
+          </li>
+          <li class="nav-item">
+            <a href="suporte.html" class="nav-link">Suporte</a>
+          </li>
+        </ul>
+        
+      </header>
 
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col text-center">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                        </a>
-                        <span class="mb-3 mb-md-0 text-white"><b>© 2024 Tatakai Corps</b>, Copyright all rights are reserved</span>
-                    </div>
-                  </footer>
-            </div>
-        </div>
-
+      <div>
+        <img src="charheader.png" alt="" width="100%" height="500px" max-width="100%" />
     </div>
-</body>
+
+      <main class="container-fluid">
+        
+        <div class="personagem col-5">
+          <section id="thorkell">
+            <header class="titulo-thor text-center">
+                <h3>THORKELL THUNDERSTRENGHT</h3>
+            </header>
+                
+            <article>
+              <header class="subtitulo" id="histThor">
+                <h4>História</h4>
+              </header>
+              <p id="ptm">
+                Thorkell, com sua imponente estatura e aspecto de viking, é uma
+                figura venerada na cidade portuária onde reside. Sua trajetória
+                é marcada por um passado de conflitos, tendo sido forjado nas
+                batalhas que assolaram a região. Como mestre de Muay Thai, ele
+                não apenas treina Joe, um jovem talentoso em busca de
+                disciplina, mas também seu fiel amigo Zezim. Sua influência se
+                estende além do ringue, sendo uma fonte de orientação e apoio
+                para todos na comunidade, especialmente os jovens em busca de um
+                caminho. Embora assombrado por lembranças sombrias, Thorkell
+                encontra redenção no ensinamento do verdadeiro propósito da
+                luta: uma jornada de autodescoberta e superação. Essas lições,
+                enraizadas em sua própria experiência, são transmitidas com
+                sabedoria e exemplo, consolidando sua posição não apenas como um
+                mestre das artes marciais, mas como um guia espiritual para
+                aqueles que o cercam.
+              </p>
+              
+            </article>
+            <article>
+                <header class="subtitulo">
+                  <h4>Personalidade</h4>
+                </header>
+                <p>
+                  A personalidade de Thorkell é uma mistura complexa de
+                  determinação inabalável, sabedoria profunda e uma generosidade
+                  que transcende suas próprias cicatrizes emocionais. Ele irradia
+                  uma presença imponente, mas ao mesmo tempo é caloroso e
+                  acolhedor para aqueles que o procuram em busca de orientação.
+                  Sua natureza impulsiva, moldada pelas experiências de guerra, é
+                  equilibrada por uma disciplina ferrenha que ele busca instilar
+                  em seus alunos. Às vezes suas ações podem ser consideradas
+                  brutas por quem vê, contudo possuem um cunho de afeto para seus
+                  ensinamentos.
+                </p>
+              </article>
+          </section>
+
+          <section id="one">
+            <header class="text-center titulo">
+              <h3>ONE</h3>
+            </header>
+            
+            <article>
+              <header class="subtitulo">
+                <h4>História</h4>
+              </header>
+              <p>
+                One é uma adição crucial à jornada épica dos protagonistas,
+                trazendo consigo não apenas a notícia trágica da morte do amigo
+                de infância de Joe, mas também uma promessa de aventura e
+                descoberta. Sua origem distante e encontro revelador com o
+                misticismo antigo em uma tumba ancestral o dotaram não apenas de
+                habilidades físicas impressionantes, mas também de um profundo
+                entendimento do mundo espiritual. Ao se juntar à busca para
+                enfrentar o grande mal no Oriente Médio, One emerge não apenas
+                como um guerreiro habilidoso, mas também como um guardião dos
+                segredos antigos que podem ser a chave para a vitória. Sua
+                presença é uma fonte de orientação espiritual e força em tempos
+                de adversidade, enquanto ele e seus companheiros enfrentam
+                desafios e descobertas que os levam além dos limites do que é
+                conhecido.
+              </p>
+            </article>
+            <article>
+                <header class="subtitulo" id="perOne">
+                  <h4>Personalidade</h4>
+                </header>
+                <p>
+                  Apesar de sua apatia em relação aos sentimentos alheios, a
+                  personalidade de One é longe de ser sombria; ele simplesmente
+                  carece da capacidade de se conectar emocionalmente com os
+                  outros. No entanto, seu senso de humor peculiar adiciona uma
+                  camada de leveza às interações, especialmente quando contrastado
+                  com o temperamento impulsivo de Joe. Essas dinâmicas entre os
+                  dois protagonistas muitas vezes resultam em cenas hilárias, onde
+                  a seriedade de One é contrabalançada pela espontaneidade de Joe,
+                  criando momentos memoráveis de camaradagem e diversão em meio às
+                  adversidades da jornada.
+                </p>
+              </article>
+          </section>
+
+          <section id="joe">
+            <header class="text-center titulo" >
+              <h3>JOE JOESTAR</h3>
+            </header>
+            
+            <article>
+              <header class="subtitulo">
+                <h4>História</h4>
+              </header>
+              <p>
+                Joe, um jovem prodígio do boxe, teve sua vida dramaticamente
+                alterada após a trágica morte de seu amigo de infância. Treinado
+                por Thorkell, ele encontra no mentor a força para superar sua
+                dor e se comprometer a proteger o que resta de sua comunidade.
+                Suas habilidades excepcionais no ringue e o espírito indomável o
+                destacam não apenas como um lutador formidável, mas como um
+                símbolo de esperança e resiliência para aqueles ao seu redor.
+              </p>
+            </article>
+            <article>
+              <header class="subtitulo">
+                <h4>Personalidade</h4>
+              </header>
+              <p>
+                Joe é um personagem impulsivo e determinado, cujo coração é
+                movido pela justiça e pelo desejo de proteger seus entes
+                queridos. Sua jornada é marcada por altos e baixos emocionais,
+                mas ele sempre encontra uma maneira de canalizar suas emoções
+                para se tornar mais forte e focado. A relação com Thorkell e
+                Zezim é central em sua vida, proporcionando-lhe tanto desafios
+                quanto suporte emocional, essencial para seu crescimento pessoal
+                e como lutador.
+              </p>
+            </article>
+          </section>
+        </div>
+
+        <div class="col-5">
+            <img
+            src="Thorkell.png"
+            width="300"
+            height="300"
+            alt="Aparência de Thorkell"
+            class="esfera"
+            />
+            <img
+              src="one.png"
+              width="300"
+              height="300"
+              alt="Aparência de One"
+              class="esfera"
+            />
+            <img
+              src="Joe.png"
+              width="300"
+              height="300"
+              alt="Aparência de Joe"
+              class="esfera"
+            />
+        </div>
+        
+        
+        <aside class="novidades col-2">
+          <h3>Últimas Novidades</h3>
+          <div class="novidade">
+            <h4>Novo Capítulo Lançado</h4>
+            <p>
+              Agora você pode conferir o mais recente capítulo da saga de
+              Tatakai RPG. Não perca as novas reviravoltas!
+            </p>
+          </div>
+          <div class="novidade">
+            <h4>Evento Especial: Luta pela Justiça</h4>
+            <p>
+              Participe do evento especial onde você poderá desafiar os maiores
+              lutadores do reino!
+            </p>
+          </div>
+          <div class="novidade">
+            <h4>Atualização de Personagens</h4>
+            <p>
+              Conheça as novas habilidades e histórias dos personagens Thorkell,
+              One e Joe. Prepare-se para novos desafios!
+            </p>
+          </div>
+        </aside>
+        
+      </main>
+    </div>
+
+    <div class="text-center">
+        <h3>PERSONAGENS DA TERCEIRA TEMPORADA</h3>
+        <video src="Tatakai — Intro.mp4" muted autoplay controls width="640px" height="360px"></video>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+          <footer
+            class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+          >
+            <div class="col-md-4 d-flex align-items-center">
+              <a
+                href="/"
+                class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+              >
+                <svg class="bi" width="30" height="24">
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+              </a>
+              <span class="mb-3 mb-md-0 text-white"
+                ><b>© 2024 Tatakai Corps</b>, Copyright all rights are
+                reserved</span
+              >
+            </div>
+          </footer>
+        </div>
+      </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-zoujxwhpB17iqtPfaPj8RinLOK1XJ8/ztqlXtkd1Hh/UNgtJQVIcm3xnKDLOpMI7"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
